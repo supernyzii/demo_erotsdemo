@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:istorebtaxx/main_screens/home.dart';
 
 class CustomerHomeScreen extends StatefulWidget {
   const CustomerHomeScreen({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
 
   //create a list of widget for our bottom navigation bar ...
   final List<Widget> _tabs = const[
-    Center(child: Text('home screen')),
+    HomeScreen(),
     Center(child: Text('category screen')),
     Center(child: Text('stores screen')),
     Center(child: Text('cart screen')),
