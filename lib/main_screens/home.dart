@@ -18,7 +18,40 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          title: const CupertinoSearchTextField(),
+          title: Container(
+            height:35,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.yellow, width: 1.4),
+              borderRadius: BorderRadius.circular(25)),
+            child:Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Text('What are you looing for?',
+                      style: TextStyle(fontSize: 18, color: Colors.grey),
+                    ),
+                  ],
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.yellow,
+                    borderRadius: BorderRadius.circular(25)),
+                    child: const Center(
+                      child: Text('Search',
+                        style: TextStyle(fontSize: 16, color: Colors.grey),),
+                    ),
+                )
+              ],
+            ),
+          ),
           bottom: const TabBar(
             indicatorColor: Colors.yellow,
             indicatorWeight: 8,
