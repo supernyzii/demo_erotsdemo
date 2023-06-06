@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:istorebtaxx/minor_screens/search.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -18,38 +19,44 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          title: Container(
-            height:35,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.yellow, width: 1.4),
-              borderRadius: BorderRadius.circular(25)),
-            child:Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Icon(
-                        Icons.search,
-                        color: Colors.grey,
+          title: InkWell(
+            onTap: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const SearchScreen()));
+            },
+            child: Container(
+              height:35,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.yellow, width: 1.4),
+                borderRadius: BorderRadius.circular(25)),
+              child:Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Icon(
+                          Icons.search,
+                          color: Colors.grey,
+                        ),
                       ),
-                    ),
-                    Text('What are you looing for?',
-                      style: TextStyle(fontSize: 18, color: Colors.grey),
-                    ),
-                  ],
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    borderRadius: BorderRadius.circular(25)),
-                    child: const Center(
-                      child: Text('Search',
-                        style: TextStyle(fontSize: 16, color: Colors.grey),),
-                    ),
-                )
-              ],
+                      Text('What are you looing for?',
+                        style: TextStyle(fontSize: 18, color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(25)),
+                      child: const Center(
+                        child: Text('Search',
+                          style: TextStyle(fontSize: 16, color: Colors.grey),),
+                      ),
+                  )
+                ],
+              ),
             ),
           ),
           bottom: const TabBar(
