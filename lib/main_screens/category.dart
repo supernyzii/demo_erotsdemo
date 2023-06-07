@@ -14,6 +14,7 @@ List<ItemsData> items = [
 ];
 
 class CategoryScreen extends StatefulWidget {
+
   const CategoryScreen({Key? key}) : super(key: key);
 
   @override
@@ -21,6 +22,7 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
+  final PageController _pageController = PageController();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -54,12 +56,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
           itemBuilder: (context, index){
             return  GestureDetector(
               onTap: () {
-                for (var element in items){
+                _pageController.jumpToPage(index);
+               /* for (var element in items){
                   element.isSelected = false;
                 }
                 setState(() {
                   items[index].isSelected = true;
-                });
+                });*/
               },
               child: Container(
                 color: items[index].isSelected == true ? Colors.white : Colors.grey.shade300,
@@ -79,6 +82,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
       width: size.width * 0.8,
       color: Colors.white,
        child: PageView(
+         controller: _pageController,
          onPageChanged: (value){
            for (var element in items){
              element.isSelected = false;
@@ -90,14 +94,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
          scrollDirection: Axis.vertical,
          children: const[
            Center(child: Text('men category')),
-           Center(child: Text('men category')),
-           Center(child: Text('men category')),
-           Center(child: Text('men category')),
-           Center(child: Text('men category')),
-           Center(child: Text('men category')),
-           Center(child: Text('men category')),
-           Center(child: Text('men category')),
-           Center(child: Text('men category')),
+           Center(child: Text('women category')),
+           Center(child: Text('shoes category')),
+           Center(child: Text('bags category')),
+           Center(child: Text('electronics category')),
+           Center(child: Text('accessories category')),
+           Center(child: Text('home & garden category')),
+           Center(child: Text('kids category')),
+           Center(child: Text('beauty category')),
          ]
        )
     );
