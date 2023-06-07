@@ -23,6 +23,19 @@ class CategoryScreen extends StatefulWidget {
 
 class _CategoryScreenState extends State<CategoryScreen> {
   final PageController _pageController = PageController();
+
+  @override
+  void initState() {
+    for (var element in items){
+      element.isSelected = false;
+    }
+    setState(() {
+      items[0].isSelected = true;
+    });
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
