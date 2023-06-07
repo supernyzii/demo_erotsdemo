@@ -56,13 +56,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
           itemBuilder: (context, index){
             return  GestureDetector(
               onTap: () {
-                _pageController.jumpToPage(index);
-               /* for (var element in items){
-                  element.isSelected = false;
-                }
-                setState(() {
-                  items[index].isSelected = true;
-                });*/
+                _pageController.animateToPage(index,
+                  duration: const Duration(microseconds: 100),
+                  curve: Curves.bounceInOut);
               },
               child: Container(
                 color: items[index].isSelected == true ? Colors.white : Colors.grey.shade300,
