@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:istorebtaxx/categories/men_categ.dart';
 import 'package:istorebtaxx/widgets/fake_search.dart';
 
 List<ItemsData> items = [
@@ -102,7 +103,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
          },
          scrollDirection: Axis.vertical,
          children: const[
-           Center(child: Text('men category')),
+           MenCategory(),
            Center(child: Text('women category')),
            Center(child: Text('shoes category')),
            Center(child: Text('bags category')),
